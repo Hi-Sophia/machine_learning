@@ -21,7 +21,7 @@
 5. 交叉验证
 6. 搜索最优参数
 
-### 三、[KNN算法基本原理]()
+### 三、[KNN算法基本原理](https://github.com/wujuhong/machine_learning/blob/master/learning_notes/KNN算法基本原理.md)
 
 ### 四、[特征工程](<https://www.cnblogs.com/jasonfreak/p/5448385.html>)
 
