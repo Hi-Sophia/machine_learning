@@ -21,16 +21,7 @@
 5. 交叉验证
 6. 搜索最优参数
 
-### 三、knn算法基本原理
-
-KNN算法既可以应用于分类应用中，也可以应用在回归应用中。
-KNN在分类预测时，一般采用多数表决法；而在做回归预测时，一般采用平均值法
-
-
-def __init__(self, n_neighbors=5,
-                 weights='uniform', algorithm='auto', leaf_size=30,
-                 p=2, metric='minkowski', metric_params=None, n_jobs=1,
-                 **kwargs):
+### 三、[KNN算法基本原理]()
 
 ### 四、[特征工程](<https://www.cnblogs.com/jasonfreak/p/5448385.html>)
 
