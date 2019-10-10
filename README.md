@@ -1,15 +1,15 @@
 # 机器学习概述
 ### 一、学习流程
 
-[1、python基础](https://github.com/wujuhong/machine_learning/python_basic)
+1、[python基础](https://github.com/wujuhong/machine_learning/tree/master/python_basic)
 
-2、[numpy](https://github.com/wujuhong/machine_learning/numpy_demo)
+2、[numpy](https://github.com/wujuhong/machine_learning/tree/master/numpy_demo)
 
-3、[pandas](https://github.com/wujuhong/machine_learning/pandas_demo)
+3、[pandas](https://github.com/wujuhong/machine_learning/tree/master/pandas_demo)
 
-4、[matplotlib](https://github.com/wujuhong/machine_learning/matplotlib_demo)
+4、[matplotlib](https://github.com/wujuhong/machine_learning/tree/master/matplotlib_demo)
 
-5、[sklearn](https://github.com/wujuhong/machine_learning/sklearn_demo)
+5、[sklearn](https://github.com/wujuhong/machine_learning/tree/master/sklearn_demo)
 
 ### 二、机器学习流程
 
