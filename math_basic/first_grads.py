@@ -7,7 +7,7 @@ def df(x):
 x_old = 3.14
 
 for i in range(20):
-    x_new = x_old - 0.3 * df(x_old)
+    x_new = x_old - 0.1 * df(x_old)
     x_old = x_new
     print("f({}) = {}".format(x_new,f(x_new)))
 
