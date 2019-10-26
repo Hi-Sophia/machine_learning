@@ -15,6 +15,7 @@
 
 - [x] [导数与微分（高数上）](https://app.yinxiang.com/fx/29f52780-3b5a-4144-9110-2a27b044c0ee)
 - [x] [多元函数微分法（高数下）](https://app.yinxiang.com/fx/98e868d6-7d2e-47fe-ae71-6c7efd6261a5)
+- [x] [无穷级数（高数下）](https://app.yinxiang.com/fx/58533420-d7e0-463b-8691-099328955ea8)
 - [x] [线性代数](https://app.yinxiang.com/fx/00d4254e-f750-4cef-998a-15f1adc321b1)
 - [x] [概率论](https://app.yinxiang.com/fx/63412cfb-3436-4970-98dc-6f13b9ae1670)
 
