@@ -19,7 +19,7 @@
 - [x] [线性代数](https://app.yinxiang.com/fx/00d4254e-f750-4cef-998a-15f1adc321b1)
 - [x] [概率论](https://app.yinxiang.com/fx/63412cfb-3436-4970-98dc-6f13b9ae1670)
 
-7、人工智能概念
+7、[人工智能概念](https://github.com/Hi-Sophia/machine_learning/blob/master/learning_notes/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E5%BF%B5.md)
 
 ### 二、机器学习流程
 
