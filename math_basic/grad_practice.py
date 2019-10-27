@@ -29,3 +29,9 @@ ax = fig.gca(projection = '3d')
 surf = ax.plot_surface(X,Y,f_2d(X,Y))
 
 plt.show()
+
+
+'''
+结果：
+f(-1.5-4.0) = -17.25
+'''

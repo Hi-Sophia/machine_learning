@@ -18,8 +18,3 @@ x = np.linspace(-6,3)
 plt.plot(x,f(x))
 plt.show()
 
-
-'''
-结果：
-f(-1.5-4.0) = -17.25
-'''
