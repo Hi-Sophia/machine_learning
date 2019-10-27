@@ -18,6 +18,7 @@
 - [x] [无穷级数（高数下）](https://app.yinxiang.com/fx/58533420-d7e0-463b-8691-099328955ea8)
 - [x] [线性代数](https://app.yinxiang.com/fx/00d4254e-f750-4cef-998a-15f1adc321b1)
 - [x] [概率论](https://app.yinxiang.com/fx/63412cfb-3436-4970-98dc-6f13b9ae1670)
+- [x] [练习-求解函数最小值](https://github.com/Hi-Sophia/machine_learning/blob/master/math_basic/grad_practice.py)
 
 7、[人工智能概念](https://github.com/Hi-Sophia/machine_learning/blob/master/learning_notes/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%A6%82%E5%BF%B5.md)
 
