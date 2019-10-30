@@ -16,7 +16,7 @@ with tf.Session() as sess2:
     print(result2)
 
 
-    
+
 
 a = tf.constant(4.0)
 print("a在默认图:{}".format(a.graph is tf.get_default_graph()))
