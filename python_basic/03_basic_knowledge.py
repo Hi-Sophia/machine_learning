@@ -33,3 +33,50 @@ isinstance(num_test,int)
 '''
 四、常见操作符
 '''
+
+
+[i**i for i in range(3)]
+
+
+a = 1
+try:
+    a += 1
+except:
+    a += 1
+else:
+    a += 1
+finally:
+    a += 1
+print(a)
+
+
+x = "foo"
+y = 2
+print(x+y)
+
+x=1
+def change(a):
+    x+=1
+    print(x)
+change(x)
+
+import copy
+a = [1,2,3,4,['a','b']]
+b = a
+c = copy.copy(a)
+d = copy.deepcopy(a)
+a.append(5)
+a[4].append('c')
+
+
+x= 43
+ch = "A"
+y = 1
+(x >= y and ch < 'b' and y)
+
+
+dict = {[1,2,3]:'345'}
+
+[3] in [1,2,3,4]
+
+
