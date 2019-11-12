@@ -6,13 +6,18 @@ y1 = 2 * x + 1
 y2 = x ** 2
 
 '''
-plt.figure(figsize=(8, 5))  单位为英寸
+plt.figure(figsize=(8, 5))  figsize:指定figure的宽和高，单位为英寸
+
+plt.plot(x, y1, color='red', linewidth=1.0, linestyle='--')
+plt.plot(t,t,'r--',t,t**2,'bs',t,t**3,'g^') 
+
+颜色 r(红色) b(蓝色) g(绿色)
+线条：o(圆圈) --(破折线) s(正方形) ^(一角朝上的三角形) -(实线)
+
 ax = plt.gca()  #获取当前坐标轴信息
 plt.legend(loc='upper right')   #Legend 图例
 
-plt.plot(t,t,'r--',t,t**2,'bs',t,t**3,'g^') 
-颜色 r(红色) b(蓝色) g(绿色)
-线条：o(圆圈) --(破折线) s(正方形) ^(一角朝上的三角形) -(实线)
+
 '''
 
 #编号为三，大小为800*500像素的图片
