@@ -9,7 +9,14 @@ y2 = x ** 2
 plt.figure(figsize=(8, 5))  figsize:指定figure的宽和高，单位为英寸
 
 plt.plot(x, y1, color='red', linewidth=1.0, linestyle='--')
+
+plt.plot(x, y, lw=2, alpha=.6)
+
+linewidth(或lw):可以改变线的粗细，其值为浮点数
+alpha:控制透明度，0为完全透明，1为不透明
+
 plt.plot(t,t,'r--',t,t**2,'bs',t,t**3,'g^') 
+
 
 颜色 r(红色) b(蓝色) g(绿色)
 线条：o(圆圈) --(破折线) s(正方形) ^(一角朝上的三角形) -(实线)

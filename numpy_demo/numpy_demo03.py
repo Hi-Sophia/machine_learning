@@ -1,47 +1,54 @@
 import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib as mpl
 import sympy as sym
-
-'''
-教程：https://www.cnblogs.com/zyg123/p/10539650.html
-'''
-# 1、单个符号初始化
-x = sym.Symbol('x')
-
-# 2、多个符号初始化
-y, z = sym.symbols('x y')
-
-# 输出设置
-sym.init_printing(use_latex=True)
-
-# 输出结果
-# print(x ** 2 + y + z)
-# print(sym.latex(x ** 2 + y + z))
+import math
+import numpy as np
 
 
-expr1 = sym.sin(x) ** 2 + sym.cos(x) ** 2
-expr2 = sym.sin(x) ** 4 - 2 * sym.cos(x) ** 2 * sym.sin(x) ** 2 + sym.cos(x) ** 4
-# 进行三角形简化
-r1 = sym.trigsimp(expr1)
-r2 = sym.trigsimp(expr2)
+# def pca(X):
+#     m, n = X.shape
+#
+#     # 计算协方差
+#     # C = 1.0 / m * X.T.dot(X)
+#     X = X - np.mean(X,axis=0)
+#     C = np.cov(X)
+#
+#     # 特征值赋值给evalues，对应特征向量赋值给evectors
+#     evalues, evectors = np.linalg.eig(C)
+#
+#     # 特征值从大到小排列，返回数组索引
+#     sorted_indices = np.argsort(-evalues)
+#
+#     # 特征向量按特征值大小从左到右排列
+#     sorted_evectors = evectors[:, sorted_indices]
+#     sorted_evalues = evalues[sorted_indices]
+#
+#     return sorted_evectors, np.diag(sorted_evalues), sorted_evalues
+#
+#
+# print(pca(np.array([[1,2],[3,4],[5,6]])))
 
 
-x = sym.symbols('x')
-expr1 = sym.exp(sym.sin(x))
+#
+# total = 20
+# red = 2
+# white = 8
+# blue = 3
+# black = 1
+# purple = 6
+#
+def calcuateEntropy(x):
+    H = 0
+    total = np.sum(x)
+    for i in x:
+        p_x = float(i) / float(total)
+        H = H - p_x * np.log2(p_x)
+    return H
 
-# 1、级数展开
-r1 = expr1.series(x, 0, 6)
-# 2、去除尾数
-r2 = expr1.series(x, 0, 6).removeO()
+
+x = [2, 8, 3, 1, 6]
+print(calcuateEntropy(x))
 
 
-print("r1:", r1)
-print("r2:", r2)
-# print("r3:", r3)
-
-m2 = sym.Matrix([[1, -1], [3, 4], [0, 2]])
-print(sym.latex(m2))
-
-
-x = sym.symbols('x')
-a = sym.Integral(sym.cos(x)*sym.exp(x), x)
-sym.Eq(a, a.doit())
+sym.Function('y')

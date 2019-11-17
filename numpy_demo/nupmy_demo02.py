@@ -5,13 +5,14 @@ B = np.array([2, 2, 2])
 
 np.vstack((A,B))  #上下合并
 np.hstack((A,B))  #左右合并
+np.stack((A,B),axis=0) #对指定axis增加维度
 
 C = np.array([1, 1, 1])[:,np.newaxis]  #转置
 D = np.array([2, 2, 2])[:,np.newaxis]  #转置
 np.hstack((C,D))  #左右合并
 
 
-np.concatenate((A,B,B,A),axis=1) #合并操作需要针对多个矩阵或序列时
+#np.concatenate((A,B,B,A),axis=1) #合并操作需要针对多个矩阵或序列时
 
 x = np.array([0, 1, 2])
 y = np.array([0, 1])

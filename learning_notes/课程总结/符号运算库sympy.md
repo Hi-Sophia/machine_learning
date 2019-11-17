@@ -8,12 +8,16 @@
 import sympy as sym
 # 1、单个符号初始化
 x = sym.Symbol('x')
+func = sym.Function('func')(x)
 
 # 2、多个符号初始化
 y, z = sym.symbols('x y')
 
 # 3、输出设置
 sym.init_printing(use_latex=True)
+
+#This function get a symbolic variable from a symbolic data table.
+x_11,x_12,x_13 = sym.var('x_11 x_12 x_13')
 ```
 
 ##### 2、替换符号-subs(old,new)
@@ -65,7 +69,7 @@ print(result)
 
 #### 三、微积分
 
-##### 1、求导数-diff()
+##### 1、求导数-diff()  调用.doit()求得最终结果式子  
 
 ```python
 #1、一阶求导
@@ -88,15 +92,15 @@ r2 = sym.diff(expr1, x, 1, y, 2, z, 4)
 ```python
 x, y = sym.symbols('x y')
 
-# 1、求不定积分
+# 1、求不定积分 integrate(expr, var)
 expr1 = sym.cos(x)
 r1 = sym.integrate(expr1, x)
 
-# 2、求定积分
+# 2、求定积分 integrate(expr, (var, min, max)) 
 expr2 = sym.exp(-x)
 r2 = sym.integrate(expr2, (x, 0, sym.oo))
 
-# 3、求多重积分
+# 3、求多重积分 integrate(expr, (var1, min, max),(var2,min,max))
 expr3 = sym.exp(-x ** 2 - y ** 2)
 r3 = sym.integrate(expr3, (x, -sym.oo, sym.oo), (y, -sym.oo, sym.oo))
 ```
@@ -118,7 +122,7 @@ r2 = sym.limit(expr2, x, 0, '+')
 r3 = sym.limit(expr2, x, 0, '-')
 ```
 
-##### 4、级数展开-series()
+##### 4、级数展开(泰勒公式)-series()
 
 ```python
 x = sym.symbols('x')
@@ -132,26 +136,33 @@ r2 = expr1.series(x, 0, 6).removeO()
 
 #### 四、解方程组
 
-1、求解多元一次方程-slove()
+##### 1、求解多元一次方程-slove()
 
-2、解线性方程组-linslove()
+##### 2、解线性方程组-linslove()
 
-3、解非线性方程组-nonlinslove()
+##### 3、解非线性方程组-nonlinslove()
 
-4、解微分方程-dslove()
+##### 4、解微分方程-dslove()
 
-五、[矩阵的操作](https://www.cnblogs.com/zyg123/p/10554686.html)
+#### 五、[矩阵的操作](https://www.cnblogs.com/zyg123/p/10554686.html)
 
-1、矩阵的创建-Matrix()
+##### 1、矩阵的创建-Matrix()
 
-2、常用的构造矩阵
+```python
+M = sym.Matrix([[25, 15, -5], [15, 18, 0],[-5, 0, 11]])
+invM=M.inv() #矩阵逆
+L, U, T = M.LUdecomposition()  #LU分解
+Q, R = M.QRdecomposition()   #QR分解
+```
+
+##### 2、常用的构造矩阵
 
 - 单位矩阵：eye(）
 - 零矩阵：zeros(）
 - 一矩阵：ones(）
 - 对角矩阵：diag(）
 
-3、基本操作
+##### 3、基本操作
 
 - 获取形状：.shape()
 - 获得单行与单列：.row(n) .col(n)
@@ -159,16 +170,36 @@ r2 = expr1.series(x, 0, 6).removeO()
 - 插入新行与列：.row_insert(pos, M) .col_insert(pos, M)
 - 对矩阵求转置：m.T
 
-4、矩阵的运算
+##### 4、矩阵的运算
 
 - 加减法：直接使用+ -即可
 - 乘法：*
 - 求逆矩阵：M**(-1)
 
-5、行列式
+##### 5、行列式
 
 - 求行列式：M.det()
 - 求阶梯矩阵：M.rref()
 - 求特征值与向量：M.eignvals()
 
-6、对角化矩阵-diagonalize()
+##### 6、对角化矩阵-diagonalize()
+
+#### 六、[统计模块-stats](https://docs.sympy.org/latest/modules/stats.html)
+
+Random variables may be declared using prebuilt functions such as **Normal**, **Exponential**, **Coin**, **Die**, etc… or built with functions like **FiniteRV**
+
+| Expression             | Meaning                      |
+| ---------------------- | ---------------------------- |
+| `P(condition)`         | Probability                  |
+| `E(expression)`        | Expected value               |
+| `variance(expression)` | Variance                     |
+| `density(expression)`  | Probability Density Function |
+| `sample(expression)`   | Produce a realization        |
+| `where(condition)`     | Where the condition is true  |
+
+```python
+import sympy.stats as stats
+coin = stats.Die('coin',2)
+P=stats.P
+```
+
