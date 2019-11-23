@@ -61,6 +61,8 @@ data["array1"]
 
 11、np.mat(a)：将目标数据的类型转换为矩阵（matrix）
 
+12、np.flatnonzero()：该函数输入一个矩阵，返回扁平化后矩阵中非零元素的位置（index）
+
 二、numpy线性代数np.linalg：
 
 np.linalg.inv(A)：求方阵的逆矩阵
