@@ -1,6 +1,4 @@
 import tensorflow as tf
-import numpy as np
-
 '''
 定义计算操作
 '''
@@ -20,11 +18,6 @@ print(c)
 # print(sess.run(c))
 # sess.close()
 
-with tf.Session() as sess:
-    writer = tf.summary.FileWriter('./graphs',sess.graph)
-    print(sess.run(c))
-    
-    writer.close()
 
 '''
 TensorFlow中最基本的单位是常量（Constant）、变量（Variable）和占位符（Placeholder）
@@ -49,33 +42,4 @@ TensorFlow中最基本的单位是常量（Constant）、变量（Variable）和
 #     print(sess.run(c))
 
 
-'''
-dataset可以看作是相同类型元素的有序列表。
-'''
 
-dataSet = tf.data.Dataset.from_tensor_slices(np.array([1.0, 2.0, 3.0, 4.0, 5.0]))
-iterator = dataSet.make_one_shot_iterator()  # 从dataSet中实例化一个 iterator ，one_shot_iterator只能从头到尾读一次
-one_element = iterator.get_next()  # tensor，并不是一个实际的值
-with tf.Session() as sess:
-    for i in range(5):
-        print(sess.run(one_element))
-
-'''
-eager模式
-'''
-import tensorflow.contrib.eager as tfe
-
-tfe.enable_eager_execution()
-dataSet = tf.data.Dataset.from_tensor_slices(np.array([1.0, 2.0, 3.0, 4.0, 5.0]))
-
-#map接收函数
-dataSet.map(lambda x: x + 1)
-
-#将多个元素组合成batch
-dataSet.batch(32)
-
-#打乱dataSet中的元素，buffer_size打乱时使用的buffer大小
-dataSet.shuffle(buffer_size=10000)
-
-#将整个序列重复多次
-dataSet.repeat(5)

@@ -10,9 +10,20 @@
 
   当我们设置相同的seed，每次生成的随机数相同。如果不设置seed，则每次会生成不同的随机数
 
+  ```python
+  np.random.seed(0)
+  np.random.rand(4,3)
+  ```
+
 - numpy.random.RandomState()：伪随机数生成器
 
   **伪随机数是用确定性的算法计算出来的来自[0,1]均匀分布的随机数序列**。并不真正的随机，但具有类似于随机数的统计特征，如均匀性、独立性等
+
+  ```python
+  #对于某一个伪随机数发生器，只要该种子（seed）相同，产生的随机数序列就是相同的
+  rng = np.random.RandomState(23355)
+  rng.uniform(0,1,(2,3))
+  ```
 
 - np.random.normal(*loc=0.0*, *scale=1.0*, *size=None*)：高斯分布的概率密度函数
 
@@ -32,6 +43,8 @@ rng = np.random.RandomState(0)
 rng.rand(4)
 Out[16]: array([0.5488135 , 0.71518937, 0.60276338, 0.54488318])
 ```
+
+- np.random.uniform(low=0.0, high=1.0, size=None)
 
 2、np.linspace(-1, 1, 50)：在指定的间隔内返回均匀间隔的数字
 
@@ -62,6 +75,37 @@ data["array1"]
 11、np.mat(a)：将目标数据的类型转换为矩阵（matrix）
 
 12、np.flatnonzero()：该函数输入一个矩阵，返回扁平化后矩阵中非零元素的位置（index）
+
+13、扁平化函数np.ravel()与np.flatten()的区别
+
+```python
+import numpy as np
+
+a = np.arange(0,12).reshape(3,4)
+b = a.ravel() #在修改b的时候,a中相应的数也改变了
+b[1] = 99
+
+c = np.arange(0,12).reshape(3,4)
+d = c.flatten() #对拷贝所做修改不会影响原始矩阵 尽量使用flatten()避免意外错误
+d[1] = 99
+```
+
+14、np.newaxis()：插入新维度
+
+```python
+np.linspace(-1,1,10)[:,np.newaxis]
+np.linspace(-1,1,10)[:,np.newaxis]
+```
+
+15、np.c_ np.r_ 实现数组转矩阵
+
+```python
+a = np.array([[1,2,3],[11,22,33]])
+b = np.array([[4,5,6],[44,55,66]])
+
+c = np.c_[a,b] #按列转换成矩阵
+r = np.r_[a,b] #按行转换成矩阵
+```
 
 二、numpy线性代数np.linalg：
 
