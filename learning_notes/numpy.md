@@ -27,7 +27,7 @@
 
 - np.random.normal(*loc=0.0*, *scale=1.0*, *size=None*)：高斯分布的概率密度函数
 
-  loc：概率分布的均值，scale：概率分布的标准差
+  loc：概率分布的均值,对应着整个分布的中心，scale:概率分布的标准差,scale越大越矮胖,越小越瘦高
 
 - numpy.random.standard_normal() ：标准正态分布随机样本
 
@@ -93,8 +93,9 @@ d[1] = 99
 14、np.newaxis()：插入新维度
 
 ```python
-np.linspace(-1,1,10)[:,np.newaxis]
-np.linspace(-1,1,10)[:,np.newaxis]
+x = np.linspace(-1,1,10)
+x[:,np.newaxis]
+x[np.newaxis,:]
 ```
 
 15、np.c_ np.r_ 实现数组转矩阵
@@ -106,6 +107,14 @@ b = np.array([[4,5,6],[44,55,66]])
 c = np.c_[a,b] #按列转换成矩阵
 r = np.r_[a,b] #按行转换成矩阵
 ```
+
+16、将数组打乱随机排列 
+
+np.random.shuffle(x)：在原数组上进行，改变自身序列，无返回值。
+
+np.random.permutation(x)：不在原数组上进行，返回新的数组，不改变自身数组。
+
+ 
 
 二、numpy线性代数np.linalg：
 

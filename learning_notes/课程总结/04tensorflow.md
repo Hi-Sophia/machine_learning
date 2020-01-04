@@ -65,3 +65,17 @@ tensorboard --logdir ./graphs
 ```
 
 四、参数存储与加载
+
+```python
+#在构建计算图后调用,将TensorFlow模型保存为.ckpt 格式的文件
+saver = tf.train.Saver() 
+with tf.Session() as sess:
+    # 保存模型到model文件夹下，
+    saver.save(sess, "model/textrnn")
+    #1、恢复
+    saver.restore(sess, "model/textrnn")
+    #2、恢复
+    saver.restore(session, tf.train.latest_checkpoint('model/textrnn'))
+
+```
+

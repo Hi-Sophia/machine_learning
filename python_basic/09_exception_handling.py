@@ -34,7 +34,7 @@ with语句自动帮你关闭文件【再也不用担心文件打开关闭的问�
 raise ZeroDivisionError('除数不能为0')
 
 try:
-    with open("/Users/wujuhong/PycharmProjects/code/machine_learning_xx/python_basic/record.txt", 'r') as f:
+    with open("record.txt", 'r') as f:
         for each_line in f:
             print(each_line)
 except OSError as reason:

@@ -32,6 +32,22 @@ discrete=pd.cut(se_ages,bin) #离散化
 pd.value_counts(discrete)  #离散化后的分组进行计数
 ```
 
+5、pd.factorize():
+
+```python
+'''
+factorize函数可以将Series中的标称型数据映射称为一组数字，相同的标称型映射为相同的数字。
+factorize函数的返回值是一个tuple（元组），元组中包含两个元素。
+第一个元素是一个array，其中的元素是标称型元素映射为的数字；
+第二个元素是Index类型，其中的元素是所有标称型元素，没有重复。
+'''
+df = pd.DataFrame({"id":[1,2,3,4,5,6,3,2], "raw_grade":['a', 'b', 'b', 'a', 'a', 'e','c','a']})
+x = pd.factorize(df.raw_grade)
+#(array([0, 1, 1, 0, 0, 2, 3, 0]), Index(['a', 'b', 'e', 'c'], dtype='object'))
+```
+
+6、pd.crosstab():
+
 二、dataframe
 
 1、df.columns：看列名
@@ -82,6 +98,8 @@ df.groupby(['Sex'], as_index=False)['Age'].mean()
 #use most frequent, it is general for discrete and continues data
 df = data_train.apply(lambda x:x.fillna(x.value_counts().index[0]))
 ```
+
+
 
 
 

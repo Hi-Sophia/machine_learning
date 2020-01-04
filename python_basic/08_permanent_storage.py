@@ -1,5 +1,5 @@
 
-f = open("/Users/wujuhong/PycharmProjects/code/machine_learning_xx/python_basic/record.txt")
+f = open("record.txt")
 
 '''
 一、文件的读取和定位 【'r' 只读 'b' 二进制模式】
@@ -19,11 +19,11 @@ f.readline()
 
 #迭代读取文本文件的每一行
 for each_line in f:
-    print(each_line)
-
+    print(each_line.strip().split("\t"))
+exit()
 ''' write'''
 
-f = open("/Users/wujuhong/PycharmProjects/code/machine_learning_xx/python_basic/record.txt",'a')
+f = open("record.txt",'a')
 f.write("I want to fly")
 
 #文件关闭 python会缓存写入的数据，写入操作必须关闭文件
@@ -42,7 +42,7 @@ os.getcwd()
 #os.chdir("/Users/wujuhong/PycharmProjects/code/a1_python_lib")
 
 #列举指定目录的文件名
-os.listdir("/Users/wujuhong/PycharmProjects/code/machine_learning_xx/python_basic")
+os.listdir("python_basic")
 
 #使用系统自带的小工具 如calc计算器
 os.system("calc")
